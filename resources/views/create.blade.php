@@ -26,7 +26,7 @@
             <textarea class="form-control" name="description" placeholder="Ender Desc">{{ old('description') }}</textarea>
         </div>
         <div class="form-group">
-        <select name="category" id="" class="form-control">
+        <select name="category_id" id="" class="form-control">
             <option value="">Select Category</option>
             @foreach($categories as $cat)
               <option value="{{$cat->id}}">{{$cat->name}}</option>
