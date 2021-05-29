@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Requests\storePostRequest;
 
@@ -27,7 +28,8 @@ class HomeController extends Controller
      */
     public function create()
     {
-        return view('create');
+        $categories=Category::all();
+        return view('create',compact('categories'));
     }
 
     /**
@@ -47,7 +49,8 @@ class HomeController extends Controller
 
         Post::create([
             'name' =>$request->name,
-            'description' =>$request->description
+            'description' =>$request->description,
+            'category_id' =>$request->category
         ]); 
         return redirect('/posts');
     }

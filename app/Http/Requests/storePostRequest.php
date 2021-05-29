@@ -25,7 +25,8 @@ class storePostRequest extends FormRequest
     {
         return [
             'name'=>'required|unique:posts|max:255',
-            'description'=>'required|max:255'   
+            'description'=>'required|max:255',
+            'category'=>'required'   
         ];
     }
     public function messages()
