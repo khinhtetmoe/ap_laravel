@@ -15,6 +15,6 @@ use App\Http\Controllers\HomeController;
 |
 */
 //Route::get('/',[HomeController::class,'index']);
-Route::resource('posts', HomeController::class)->middleware('auth:admin');
+Route::resource('posts', HomeController::class);
 Route::get('logout', [AuthController::class,'logout']);
 
